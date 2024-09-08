@@ -199,10 +199,6 @@ async reset(@Body() body: { token: string }) {
       return await this.userService.findOne(id);
     }
 
-  @Patch(':id/onboard')
-  async onoardingScreen(@Param('id', ParseUUIDPipe) id: string, @Body() body : OnboardingDto){
-    return await this.userService.updateOnboarding(id, body)
-  }
 
   @Patch(':id/profileImg')
   @UseInterceptors(FileInterceptor ('profile'))
@@ -215,10 +211,6 @@ async reset(@Body() body: { token: string }) {
     return result;
   }
 
-  @Patch(':id/settings')
-  async userSetting(@Param('id', ParseUUIDPipe) id: string, @Body() body : SettingDto){
-    return await this.userService.updateSetting(id, body)
-  }
 
 
 }
